@@ -1,7 +1,7 @@
 backend:
   name: github
   # TODO: replace with your actual "github-username/repo-name" once the repo is on GitHub.
-  repo: YOUR-GITHUB-USERNAME/nixora-georgia
+  repo: TigerWritesCode/nyxora
   branch: main
 
 # Local testing without GitHub (run `npx netlify-cms-proxy-server` or use Sveltia's local backend):
@@ -20,7 +20,11 @@ collections:
     slug: "{{fields.slug}}"
     identifier_field: name
     fields:
-      - { label: "Slug (URL, ლათინურად, მაგ. quadra-diode-4w)", name: "slug", widget: "string" }
+      - {
+          label: "Slug (URL, ლათინურად, მაგ. quadra-diode-4w)",
+          name: "slug",
+          widget: "string",
+        }
       - { label: "სახელი (მოდელი)", name: "name", widget: "string" }
       - label: "კატეგორია"
         name: "categorySlug"
@@ -33,11 +37,25 @@ collections:
           - { label: "სამედიცინო აპარატურა", value: "medical-devices" }
           - { label: "აქსესუარები", value: "accessories" }
       - { label: "ბრენდი", name: "brand", widget: "string" }
-      - { label: "გამორჩეული პროდუქტი (მთავარ გვერდზე გამოსაჩენად)", name: "featured", widget: "boolean", default: false, required: false }
+      - {
+          label: "გამორჩეული პროდუქტი (მთავარ გვერდზე გამოსაჩენად)",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+          required: false,
+        }
       - { label: "აღწერა (ინგლისურად)", name: "description_en", widget: "text" }
       - { label: "აღწერა (ქართულად)", name: "description_ka", widget: "text" }
-      - { label: "მახასიათებლები (ინგლისურად)", name: "highlights_en", widget: "list" }
-      - { label: "მახასიათებლები (ქართულად)", name: "highlights_ka", widget: "list" }
+      - {
+          label: "მახასიათებლები (ინგლისურად)",
+          name: "highlights_en",
+          widget: "list",
+        }
+      - {
+          label: "მახასიათებლები (ქართულად)",
+          name: "highlights_ka",
+          widget: "list",
+        }
 
   - name: "partners"
     label: "პარტნიორები"
@@ -63,7 +81,11 @@ collections:
     fields:
       - { label: "სათაური (ინგლისურად)", name: "title_en", widget: "string" }
       - { label: "სათაური (ქართულად)", name: "title_ka", widget: "string" }
-      - { label: "მოკლე აღწერა (ინგლისურად)", name: "excerpt_en", widget: "text" }
+      - {
+          label: "მოკლე აღწერა (ინგლისურად)",
+          name: "excerpt_en",
+          widget: "text",
+        }
       - { label: "მოკლე აღწერა (ქართულად)", name: "excerpt_ka", widget: "text" }
       - { label: "თეგი (ინგლისურად)", name: "tag_en", widget: "string" }
       - { label: "თეგი (ქართულად)", name: "tag_ka", widget: "string" }
