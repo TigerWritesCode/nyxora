@@ -1,0 +1,16 @@
+{
+	"slug": "lumera-rf-tighten",
+	"name": "Lumera RF",
+	"categorySlug": "skin-rejuvenation",
+	"brand": "Nixora Select",
+	"featured": false,
+	"description_en": "Fractional RF platform for resurfacing, tightening and fine-line protocols.",
+	"description_ka": "ფრაქციული RF პლატფორმა კანის განახლების, გამკვრივებისა და წვრილი ნაოჭების პროცედურებისთვის.",
+	"highlights_en": ["Bipolar RF matrix tip", "Adjustable depth control", "Integrated cooling", "Protocol presets"],
+	"highlights_ka": [
+		"ბიპოლარული RF მატრიცული ნაკერი",
+		"სიღრმის რეგულირებადი კონტროლი",
+		"ინტეგრირებული გაგრილება",
+		"პროცედურის წინასწარ დაყენებული პარამეტრები"
+	]
+}

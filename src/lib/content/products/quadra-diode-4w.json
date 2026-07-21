@@ -1,0 +1,21 @@
+{
+	"slug": "quadra-diode-4w",
+	"name": "Quadra Diode 4W",
+	"categorySlug": "laser-hair-removal",
+	"brand": "Nixora Select",
+	"featured": true,
+	"description_en": "A four-wavelength diode platform built for high-volume clinics, combining depth and precision in a single handpiece.",
+	"description_ka": "ოთხტალღოვანი დიოდური პლატფორმა, შექმნილი მაღალი დატვირთვის კლინიკებისთვის, რომელიც აერთიანებს სიღრმესა და სიზუსტეს ერთ ხელსაწყოში.",
+	"highlights_en": [
+		"1200W high-power diode laser",
+		"Four wavelengths — 755 / 808 / 940 / 1064 nm",
+		"Sapphire contact cooling",
+		"10.4\" medical-grade touchscreen"
+	],
+	"highlights_ka": [
+		"1200 W მაღალი სიმძლავრის დიოდური ლაზერი",
+		"ოთხი ტალღის სიგრძე — 755 / 808 / 940 / 1064 ნმ",
+		"საფირონის კონტაქტური გაგრილება",
+		"10.4 დიუმიანი სამედიცინო კლასის სენსორული ეკრანი"
+	]
+}

@@ -1,0 +1,70 @@
+backend:
+  name: github
+  # TODO: replace with your actual "github-username/repo-name" once the repo is on GitHub.
+  repo: YOUR-GITHUB-USERNAME/nixora-georgia
+  branch: main
+
+# Local testing without GitHub (run `npx netlify-cms-proxy-server` or use Sveltia's local backend):
+# local_backend: true
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "products"
+    label: "პროდუქცია"
+    label_singular: "პროდუქტი"
+    folder: "src/lib/content/products"
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: name
+    fields:
+      - { label: "Slug (URL, ლათინურად, მაგ. quadra-diode-4w)", name: "slug", widget: "string" }
+      - { label: "სახელი (მოდელი)", name: "name", widget: "string" }
+      - label: "კატეგორია"
+        name: "categorySlug"
+        widget: "select"
+        options:
+          - { label: "ლაზერული თმის მოცილება", value: "laser-hair-removal" }
+          - { label: "კანის განახლება", value: "skin-rejuvenation" }
+          - { label: "სხეულის კონტურირება", value: "body-contouring" }
+          - { label: "სტომატოლოგიური აღჭურვილობა", value: "dental-equipment" }
+          - { label: "სამედიცინო აპარატურა", value: "medical-devices" }
+          - { label: "აქსესუარები", value: "accessories" }
+      - { label: "ბრენდი", name: "brand", widget: "string" }
+      - { label: "გამორჩეული პროდუქტი (მთავარ გვერდზე გამოსაჩენად)", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "აღწერა (ინგლისურად)", name: "description_en", widget: "text" }
+      - { label: "აღწერა (ქართულად)", name: "description_ka", widget: "text" }
+      - { label: "მახასიათებლები (ინგლისურად)", name: "highlights_en", widget: "list" }
+      - { label: "მახასიათებლები (ქართულად)", name: "highlights_ka", widget: "list" }
+
+  - name: "partners"
+    label: "პარტნიორები"
+    label_singular: "პარტნიორი"
+    folder: "src/lib/content/partners"
+    create: true
+    delete: true
+    slug: "{{fields.name}}"
+    identifier_field: name
+    fields:
+      - { label: "დასახელება", name: "name", widget: "string" }
+      - { label: "ტიპი (ინგლისურად)", name: "type_en", widget: "string" }
+      - { label: "ტიპი (ქართულად)", name: "type_ka", widget: "string" }
+
+  - name: "blog"
+    label: "ბლოგი"
+    label_singular: "სტატია"
+    folder: "src/lib/content/blog"
+    create: true
+    delete: true
+    slug: "{{fields.title_en}}"
+    identifier_field: title_en
+    fields:
+      - { label: "სათაური (ინგლისურად)", name: "title_en", widget: "string" }
+      - { label: "სათაური (ქართულად)", name: "title_ka", widget: "string" }
+      - { label: "მოკლე აღწერა (ინგლისურად)", name: "excerpt_en", widget: "text" }
+      - { label: "მოკლე აღწერა (ქართულად)", name: "excerpt_ka", widget: "text" }
+      - { label: "თეგი (ინგლისურად)", name: "tag_en", widget: "string" }
+      - { label: "თეგი (ქართულად)", name: "tag_ka", widget: "string" }
+      - { label: "თარიღი", name: "date", widget: "date" }

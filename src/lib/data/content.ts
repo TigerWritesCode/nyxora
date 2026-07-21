@@ -67,108 +67,34 @@ export type Product = {
 	featured?: boolean;
 };
 
-export const products: Product[] = [
-	{
-		slug: 'quadra-diode-4w',
-		name: 'Quadra Diode 4W',
-		categorySlug: 'laser-hair-removal',
-		brand: 'Nixora Select',
-		description: {
-			en: 'A four-wavelength diode platform built for high-volume clinics, combining depth and precision in a single handpiece.',
-			ka: 'ოთხტალღოვანი დიოდური პლატფორმა, შექმნილი მაღალი დატვირთვის კლინიკებისთვის, რომელიც აერთიანებს სიღრმესა და სიზუსტეს ერთ ხელსაწყოში.'
-		},
-		highlights: {
-			en: [
-				'1200W high-power diode laser',
-				'Four wavelengths — 755 / 808 / 940 / 1064 nm',
-				'Sapphire contact cooling',
-				'10.4" medical-grade touchscreen'
-			],
-			ka: [
-				'1200 W მაღალი სიმძლავრის დიოდური ლაზერი',
-				'ოთხი ტალღის სიგრძე — 755 / 808 / 940 / 1064 ნმ',
-				'საფირონის კონტაქტური გაგრილება',
-				'10.4 დიუმიანი სამედიცინო კლასის სენსორული ეკრანი'
-			]
-		},
-		featured: true
-	},
-	{
-		slug: 'lumera-rf-tighten',
-		name: 'Lumera RF',
-		categorySlug: 'skin-rejuvenation',
-		brand: 'Nixora Select',
-		description: {
-			en: 'Fractional RF platform for resurfacing, tightening and fine-line protocols.',
-			ka: 'ფრაქციული RF პლატფორმა კანის განახლების, გამკვრივებისა და წვრილი ნაოჭების პროცედურებისთვის.'
-		},
-		highlights: {
-			en: ['Bipolar RF matrix tip', 'Adjustable depth control', 'Integrated cooling', 'Protocol presets'],
-			ka: [
-				'ბიპოლარული RF მატრიცული ნაკერი',
-				'სიღრმის რეგულირებადი კონტროლი',
-				'ინტეგრირებული გაგრილება',
-				'პროცედურის წინასწარ დაყენებული პარამეტრები'
-			]
-		}
-	},
-	{
-		slug: 'contura-hifu',
-		name: 'Contura HIFU',
-		categorySlug: 'skin-rejuvenation',
-		brand: 'Aventis Medical',
-		description: {
-			en: 'Focused ultrasound system for non-surgical lifting and contouring.',
-			ka: 'ფოკუსირებული ულტრაბგერითი სისტემა არაქირურგიული აწევისა და კონტურირებისთვის.'
-		},
-		highlights: {
-			en: ['4 cartridge depths', 'Real-time visualization', 'Quiet-drive transducer'],
-			ka: ['4 კარტრიჯის სიღრმე', 'რეალურ დროში ვიზუალიზაცია', 'დაბალხმაურიანი გადამწოდი']
-		}
-	},
-	{
-		slug: 'sculpta-ems',
-		name: 'Sculpta EMS',
-		categorySlug: 'body-contouring',
-		brand: 'Aventis Medical',
-		description: {
-			en: 'Electromagnetic muscle stimulation for body sculpting sessions.',
-			ka: 'ელექტრომაგნიტური კუნთების სტიმულაცია სხეულის მოდელირების სეანსებისთვის.'
-		},
-		highlights: {
-			en: ['Dual-applicator sessions', '7 intensity tiers', 'Ergonomic applicator arms'],
-			ka: ['ორმაგი აპლიკატორის სეანსები', 'ინტენსივობის 7 დონე', 'ერგონომიული აპლიკატორის მკლავები']
-		}
-	},
-	{
-		slug: 'orbis-imaging',
-		name: 'Orbis Imaging Unit',
-		categorySlug: 'dental-equipment',
-		brand: 'Praxis Dental',
-		description: {
-			en: 'Compact digital imaging system for diagnostic-grade dental workflows.',
-			ka: 'კომპაქტური ციფრული ვიზუალიზაციის სისტემა დიაგნოსტიკური დონის სტომატოლოგიური სამუშაო პროცესებისთვის.'
-		},
-		highlights: {
-			en: ['Low-dose sensor array', 'Chairside display', 'Cloud-ready export'],
-			ka: ['დაბალდოზიანი სენსორული მასივი', 'სავარძელთან განთავსებული ეკრანი', 'ღრუბლოვან სერვისებთან თავსებადი ექსპორტი']
-		}
-	},
-	{
-		slug: 'vantis-derma',
-		name: 'Vantis Derma Scanner',
-		categorySlug: 'medical-devices',
-		brand: 'Nixora Select',
-		description: {
-			en: 'Dermatological diagnostic scanner for clinical documentation and tracking.',
-			ka: 'დერმატოლოგიური დიაგნოსტიკური სკანერი კლინიკური დოკუმენტაციისა და მონიტორინგისთვის.'
-		},
-		highlights: {
-			en: ['Polarized + UV imaging modes', 'Patient history tracking', 'Clinic-network sync'],
-			ka: ['პოლარიზებული და UV ვიზუალიზაციის რეჟიმები', 'პაციენტის ისტორიის მონიტორინგი', 'კლინიკების ქსელთან სინქრონიზაცია']
-		}
-	}
-];
+type ProductFile = {
+	slug: string;
+	name: string;
+	categorySlug: string;
+	brand: string;
+	featured?: boolean;
+	description_en: string;
+	description_ka: string;
+	highlights_en: string[];
+	highlights_ka: string[];
+};
+
+const productFiles = import.meta.glob<ProductFile>('./../content/products/*.json', {
+	eager: true,
+	import: 'default'
+});
+
+export const products: Product[] = Object.values(productFiles)
+	.map((p) => ({
+		slug: p.slug,
+		name: p.name,
+		categorySlug: p.categorySlug,
+		brand: p.brand,
+		featured: p.featured,
+		description: { en: p.description_en, ka: p.description_ka },
+		highlights: { en: p.highlights_en, ka: p.highlights_ka }
+	}))
+	.sort((a, b) => a.name.localeCompare(b.name));
 
 export const industries: { name: LocalizedString; description: LocalizedString }[] = [
 	{
@@ -238,3 +164,54 @@ export const brands: { name: string; description: LocalizedString }[] = [
 		}
 	}
 ];
+
+export type Partner = {
+	name: string;
+	type: LocalizedString;
+};
+
+type PartnerFile = {
+	name: string;
+	type_en: string;
+	type_ka: string;
+};
+
+const partnerFiles = import.meta.glob<PartnerFile>('./../content/partners/*.json', {
+	eager: true,
+	import: 'default'
+});
+
+export const partners: Partner[] = Object.values(partnerFiles)
+	.map((p) => ({ name: p.name, type: { en: p.type_en, ka: p.type_ka } }))
+	.sort((a, b) => a.name.localeCompare(b.name));
+
+export type BlogPost = {
+	title: LocalizedString;
+	excerpt: LocalizedString;
+	tag: LocalizedString;
+	date: string;
+};
+
+type BlogFile = {
+	title_en: string;
+	title_ka: string;
+	excerpt_en: string;
+	excerpt_ka: string;
+	tag_en: string;
+	tag_ka: string;
+	date: string;
+};
+
+const blogFiles = import.meta.glob<BlogFile>('./../content/blog/*.json', {
+	eager: true,
+	import: 'default'
+});
+
+export const blogPosts: BlogPost[] = Object.values(blogFiles)
+	.map((b) => ({
+		title: { en: b.title_en, ka: b.title_ka },
+		excerpt: { en: b.excerpt_en, ka: b.excerpt_ka },
+		tag: { en: b.tag_en, ka: b.tag_ka },
+		date: b.date
+	}))
+	.sort((a, b) => b.date.localeCompare(a.date));

@@ -1,0 +1,15 @@
+{
+	"slug": "orbis-imaging",
+	"name": "Orbis Imaging Unit",
+	"categorySlug": "dental-equipment",
+	"brand": "Praxis Dental",
+	"featured": false,
+	"description_en": "Compact digital imaging system for diagnostic-grade dental workflows.",
+	"description_ka": "კომპაქტური ციფრული ვიზუალიზაციის სისტემა დიაგნოსტიკური დონის სტომატოლოგიური სამუშაო პროცესებისთვის.",
+	"highlights_en": ["Low-dose sensor array", "Chairside display", "Cloud-ready export"],
+	"highlights_ka": [
+		"დაბალდოზიანი სენსორული მასივი",
+		"სავარძელთან განთავსებული ეკრანი",
+		"ღრუბლოვან სერვისებთან თავსებადი ექსპორტი"
+	]
+}

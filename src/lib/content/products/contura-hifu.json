@@ -1,0 +1,11 @@
+{
+	"slug": "contura-hifu",
+	"name": "Contura HIFU",
+	"categorySlug": "skin-rejuvenation",
+	"brand": "Aventis Medical",
+	"featured": false,
+	"description_en": "Focused ultrasound system for non-surgical lifting and contouring.",
+	"description_ka": "ფოკუსირებული ულტრაბგერითი სისტემა არაქირურგიული აწევისა და კონტურირებისთვის.",
+	"highlights_en": ["4 cartridge depths", "Real-time visualization", "Quiet-drive transducer"],
+	"highlights_ka": ["4 კარტრიჯის სიღრმე", "რეალურ დროში ვიზუალიზაცია", "დაბალხმაურიანი გადამწოდი"]
+}

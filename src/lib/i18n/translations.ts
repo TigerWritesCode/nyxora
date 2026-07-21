@@ -111,36 +111,7 @@ export const ui = {
 			eyebrow: 'Blog',
 			h1: 'Equipment guides and industry notes',
 			subtitle: 'Practical notes for clinic owners and aesthetic professionals evaluating equipment.',
-			readArticle: 'Read article →',
-			posts: [
-				{
-					title: 'Choosing a diode laser platform: what clinics should evaluate first',
-					excerpt:
-						'Wavelength range, cooling method and touchpoint durability matter more than headline power figures.',
-					tag: 'Equipment Guide',
-					date: 'June 2026'
-				},
-				{
-					title: 'HIFU vs RF: matching the technology to your patient demand',
-					excerpt:
-						'A practical comparison for clinics deciding between focused ultrasound and radiofrequency platforms.',
-					tag: 'Industry Trends',
-					date: 'May 2026'
-				},
-				{
-					title: 'What a service agreement should actually cover',
-					excerpt:
-						'Calibration schedules, response times and parts availability — the terms worth reading closely.',
-					tag: 'After-sales',
-					date: 'April 2026'
-				},
-				{
-					title: 'Preparing your clinic for a new equipment installation',
-					excerpt: 'Power requirements, room layout and staff training timelines to plan around.',
-					tag: 'Equipment Guide',
-					date: 'March 2026'
-				}
-			]
+			readArticle: 'Read article →'
 		},
 		contact: {
 			title: 'Contact — NIXORA GEORGIA',
@@ -200,14 +171,6 @@ export const ui = {
 			h1: 'Clinics that run on Nixora equipment',
 			subtitle:
 				'A selection of the clinics, medical centers and beauty groups we currently supply and support across Georgia.',
-			list: [
-				{ name: 'Tbilisi Aesthetic Institute', type: 'Clinic Network' },
-				{ name: 'Vera Medical Center', type: 'Medical Center' },
-				{ name: 'Batumi Derma Clinic', type: 'Dermatology' },
-				{ name: 'Kutaisi Smile Dental', type: 'Dental Clinic' },
-				{ name: 'Gold Line Beauty Group', type: 'Beauty Centers' },
-				{ name: 'Caucasus Wellness Spa', type: 'Spa Clinic' }
-			],
 			ctaTitle: 'Want to become a Nixora partner clinic?',
 			ctaSubtitle: "We'll walk through your equipment needs and recommend a configuration."
 		},
@@ -344,36 +307,7 @@ export const ui = {
 			h1: 'აღჭურვილობის გზამკვლევები და ინდუსტრიის სიახლეები',
 			subtitle:
 				'პრაქტიკული რჩევები კლინიკის მფლობელებისა და ესთეტიკის სფეროს პროფესიონალებისთვის, რომლებიც აფასებენ აღჭურვილობას.',
-			readArticle: 'სტატიის წაკითხვა →',
-			posts: [
-				{
-					title: 'დიოდური ლაზერული პლატფორმის შერჩევა: რაზე უნდა გაამახვილონ ყურადღება კლინიკებმა',
-					excerpt:
-						'ტალღის სიგრძის დიაპაზონი, გაგრილების მეთოდი და კონტაქტის სიმტკიცე უფრო მნიშვნელოვანია, ვიდრე სარეკლამო სიმძლავრის მაჩვენებლები.',
-					tag: 'აღჭურვილობის გზამკვლევი',
-					date: 'ივნისი 2026'
-				},
-				{
-					title: 'HIFU vs RF: ტექნოლოგიის შერჩევა პაციენტთა მოთხოვნის მიხედვით',
-					excerpt:
-						'პრაქტიკული შედარება კლინიკებისთვის, რომლებიც ირჩევენ ფოკუსირებულ ულტრაბგერასა და რადიოსიხშირულ პლატფორმებს შორის.',
-					tag: 'ინდუსტრიის ტენდენციები',
-					date: 'მაისი 2026'
-				},
-				{
-					title: 'რა უნდა მოიცავდეს სერვისის ხელშეკრულებამ სინამდვილეში',
-					excerpt:
-						'კალიბრაციის გრაფიკი, რეაგირების დრო და ნაწილების ხელმისაწვდომობა — პირობები, რომლებსაც ყურადღებით უნდა გაეცნოთ.',
-					tag: 'გაყიდვის შემდგომი მომსახურება',
-					date: 'აპრილი 2026'
-				},
-				{
-					title: 'კლინიკის მომზადება ახალი აღჭურვილობის ინსტალაციისთვის',
-					excerpt: 'დენის მოთხოვნები, ოთახის განლაგება და პერსონალის ტრენინგის ვადები, რომლებიც უნდა დაგეგმოთ.',
-					tag: 'აღჭურვილობის გზამკვლევი',
-					date: 'მარტი 2026'
-				}
-			]
+			readArticle: 'სტატიის წაკითხვა →'
 		},
 		contact: {
 			title: 'კონტაქტი — NIXORA GEORGIA',
@@ -433,14 +367,6 @@ export const ui = {
 			h1: 'კლინიკები, რომლებიც მუშაობენ Nixora-ს აღჭურვილობით',
 			subtitle:
 				'შერჩეული კლინიკები, სამედიცინო ცენტრები და სილამაზის ჯგუფები, რომლებსაც ამჟამად ვამარაგებთ და ვუწევთ მხარდაჭერას მთელი საქართველოს მასშტაბით.',
-			list: [
-				{ name: 'Tbilisi Aesthetic Institute', type: 'კლინიკების ქსელი' },
-				{ name: 'Vera Medical Center', type: 'სამედიცინო ცენტრი' },
-				{ name: 'Batumi Derma Clinic', type: 'დერმატოლოგია' },
-				{ name: 'Kutaisi Smile Dental', type: 'სტომატოლოგიური კლინიკა' },
-				{ name: 'Gold Line Beauty Group', type: 'სილამაზის ცენტრები' },
-				{ name: 'Caucasus Wellness Spa', type: 'სპა კლინიკა' }
-			],
 			ctaTitle: 'გსურთ გახდეთ Nixora-ს პარტნიორი კლინიკა?',
 			ctaSubtitle: 'ჩვენ გავივლით თქვენი აღჭურვილობის საჭიროებებს და შემოგთავაზებთ შესაბამის კონფიგურაციას.'
 		},
