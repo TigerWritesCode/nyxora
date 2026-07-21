@@ -17,6 +17,8 @@ collections:
     folder: "src/lib/content/products"
     create: true
     delete: true
+    format: "json"
+    extension: "json"
     slug: "{{fields.slug}}"
     identifier_field: name
     fields:
@@ -63,6 +65,8 @@ collections:
     folder: "src/lib/content/partners"
     create: true
     delete: true
+    format: "json"
+    extension: "json"
     slug: "{{fields.name}}"
     identifier_field: name
     fields:
@@ -76,6 +80,8 @@ collections:
     folder: "src/lib/content/blog"
     create: true
     delete: true
+    format: "json"
+    extension: "json"
     slug: "{{fields.title_en}}"
     identifier_field: title_en
     fields:
