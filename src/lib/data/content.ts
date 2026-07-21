@@ -65,6 +65,7 @@ export type Product = {
 	description: LocalizedString;
 	highlights: { en: string[]; ka: string[] };
 	featured?: boolean;
+	image?: string;
 };
 
 type ProductFile = {
@@ -73,6 +74,7 @@ type ProductFile = {
 	categorySlug: string;
 	brand: string;
 	featured?: boolean;
+	image?: string;
 	description_en: string;
 	description_ka: string;
 	highlights_en: string[];
@@ -91,6 +93,7 @@ export const products: Product[] = Object.values(productFiles)
 		categorySlug: p.categorySlug,
 		brand: p.brand,
 		featured: p.featured,
+		image: p.image,
 		description: { en: p.description_en, ka: p.description_ka },
 		highlights: { en: p.highlights_en, ka: p.highlights_ka }
 	}))

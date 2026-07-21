@@ -28,6 +28,12 @@ collections:
           widget: "string",
         }
       - { label: "სახელი (მოდელი)", name: "name", widget: "string" }
+      - {
+          label: "ფოტო",
+          name: "image",
+          widget: "image",
+          required: false,
+        }
       - label: "კატეგორია"
         name: "categorySlug"
         widget: "select"

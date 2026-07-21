@@ -33,10 +33,16 @@
 					{T.common.requestInformation}
 				</a>
 			</div>
-			<div class="flex aspect-square items-center justify-center border border-paper/10 bg-[#0f0f0f]">
-				<div class="flex h-40 w-40 items-center justify-center rounded-full border border-gold/40">
-					<span class="h-2.5 w-2.5 rounded-full bg-gold"></span>
-				</div>
+			<div class="aspect-square border border-paper/10 bg-[#0f0f0f]">
+				{#if product.image}
+					<img src={product.image} alt={product.name} class="h-full w-full object-cover" />
+				{:else}
+					<div class="flex h-full items-center justify-center">
+						<div class="flex h-40 w-40 items-center justify-center rounded-full border border-gold/40">
+							<span class="h-2.5 w-2.5 rounded-full bg-gold"></span>
+						</div>
+					</div>
+				{/if}
 			</div>
 		</div>
 	</section>

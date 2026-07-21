@@ -62,10 +62,16 @@
 	<div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{#each filtered as p (p.slug)}
 			<a href={`/products/${p.slug}`} class="reticle group border border-line bg-paper transition-colors hover:border-gold">
-				<div class="border-b border-line bg-mist p-8">
-					<div class="mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-gold/40">
-						<span class="h-2 w-2 rounded-full bg-gold"></span>
-					</div>
+				<div class="aspect-[4/3] border-b border-line bg-mist">
+					{#if p.image}
+						<img src={p.image} alt={p.name} class="h-full w-full object-cover" loading="lazy" />
+					{:else}
+						<div class="flex h-full items-center justify-center p-8">
+							<div class="flex h-28 w-28 items-center justify-center rounded-full border border-gold/40">
+								<span class="h-2 w-2 rounded-full bg-gold"></span>
+							</div>
+						</div>
+					{/if}
 				</div>
 				<div class="p-6">
 					<p class="eyebrow">{categories.find((c) => c.slug === p.categorySlug)?.name[locale]}</p>
