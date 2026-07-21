@@ -89,4 +89,11 @@ collections:
       - { label: "მოკლე აღწერა (ქართულად)", name: "excerpt_ka", widget: "text" }
       - { label: "თეგი (ინგლისურად)", name: "tag_en", widget: "string" }
       - { label: "თეგი (ქართულად)", name: "tag_ka", widget: "string" }
-      - { label: "თარიღი", name: "date", widget: "date" }
+      - {
+          label: "თარიღი",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          time_format: false,
+          picker_utc: true,
+        }
