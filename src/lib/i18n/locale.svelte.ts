@@ -2,7 +2,7 @@ import { browser } from '$app/environment';
 
 export type Locale = 'en' | 'ka';
 
-const STORAGE_KEY = 'nixora-locale';
+const STORAGE_KEY = 'nyxora-locale';
 
 export const localeState = $state<{ current: Locale }>({ current: 'en' });
 

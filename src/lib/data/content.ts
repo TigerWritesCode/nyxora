@@ -1,67 +1,9 @@
 export type LocalizedString = { en: string; ka: string };
 
-export type Category = {
-	slug: string;
-	name: LocalizedString;
-	description: LocalizedString;
-};
-
-export const categories: Category[] = [
-	{
-		slug: 'laser-hair-removal',
-		name: { en: 'Laser Hair Removal', ka: 'ლაზერული თმის მოცილება' },
-		description: {
-			en: 'High-power diode and multi-wavelength platforms for professional practices.',
-			ka: 'მაღალი სიმძლავრის დიოდური და მრავალტალღოვანი პლატფორმები პროფესიონალური პრაქტიკისთვის.'
-		}
-	},
-	{
-		slug: 'skin-rejuvenation',
-		name: { en: 'Skin Rejuvenation', ka: 'კანის განახლება' },
-		description: {
-			en: 'RF, HIFU and light-based systems for resurfacing and tightening protocols.',
-			ka: 'RF, HIFU და სინათლეზე დაფუძნებული სისტემები კანის განახლებისა და გამკვრივების პროცედურებისთვის.'
-		}
-	},
-	{
-		slug: 'body-contouring',
-		name: { en: 'Body Contouring', ka: 'სხეულის კონტურირება' },
-		description: {
-			en: 'Non-invasive fat reduction and muscle stimulation equipment.',
-			ka: 'არაინვაზიური ცხიმის შემცირებისა და კუნთების სტიმულაციის აღჭურვილობა.'
-		}
-	},
-	{
-		slug: 'dental-equipment',
-		name: { en: 'Dental Equipment', ka: 'სტომატოლოგიური აღჭურვილობა' },
-		description: {
-			en: 'Precision instruments and imaging systems for dental clinics.',
-			ka: 'ზუსტი ხელსაწყოები და ვიზუალიზაციის სისტემები სტომატოლოგიური კლინიკებისთვის.'
-		}
-	},
-	{
-		slug: 'medical-devices',
-		name: { en: 'Medical Devices', ka: 'სამედიცინო აპარატურა' },
-		description: {
-			en: 'Diagnostic and treatment devices for dermatology and general practice.',
-			ka: 'დიაგნოსტიკური და სამკურნალო აპარატები დერმატოლოგიისა და ზოგადი პრაქტიკისთვის.'
-		}
-	},
-	{
-		slug: 'accessories',
-		name: { en: 'Accessories', ka: 'აქსესუარები' },
-		description: {
-			en: 'Consumables, applicators and maintenance parts for existing installations.',
-			ka: 'სახარჯი მასალები, აპლიკატორები და სამოვლო ნაწილები არსებული აღჭურვილობისთვის.'
-		}
-	}
-];
-
 export type Product = {
 	slug: string;
 	name: string;
-	categorySlug: string;
-	brand: string;
+	tagline: LocalizedString;
 	description: LocalizedString;
 	highlights: { en: string[]; ka: string[] };
 	featured?: boolean;
@@ -71,8 +13,8 @@ export type Product = {
 type ProductFile = {
 	slug: string;
 	name: string;
-	categorySlug: string;
-	brand: string;
+	tagline_en: string;
+	tagline_ka: string;
 	featured?: boolean;
 	image?: string;
 	description_en: string;
@@ -90,8 +32,7 @@ export const products: Product[] = Object.values(productFiles)
 	.map((p) => ({
 		slug: p.slug,
 		name: p.name,
-		categorySlug: p.categorySlug,
-		brand: p.brand,
+		tagline: { en: p.tagline_en, ka: p.tagline_ka },
 		featured: p.featured,
 		image: p.image,
 		description: { en: p.description_en, ka: p.description_ka },
@@ -103,15 +44,15 @@ export const industries: { name: LocalizedString; description: LocalizedString }
 	{
 		name: { en: 'Beauty Clinics', ka: 'სილამაზის კლინიკები' },
 		description: {
-			en: 'Full-suite aesthetic equipment for treatment rooms of any scale.',
-			ka: 'სრული ესთეტიკური აღჭურვილობა ნებისმიერი ზომის საპროცედურო ოთახებისთვის.'
+			en: 'Full-suite laser hair removal rooms for treatment menus of any scale.',
+			ka: 'ლაზერული ეპილაციის სრული აღჭურვილობა ნებისმიერი ზომის საპროცედურო ოთახებისთვის.'
 		}
 	},
 	{
-		name: { en: 'Dental Clinics', ka: 'სტომატოლოგიური კლინიკები' },
+		name: { en: 'Dermatology Clinics', ka: 'დერმატოლოგიური კლინიკები' },
 		description: {
-			en: 'Imaging and precision instruments for modern dental practices.',
-			ka: 'ვიზუალიზაციისა და სიზუსტის ხელსაწყოები თანამედროვე სტომატოლოგიური პრაქტიკისთვის.'
+			en: 'Clinical-grade platforms for dermatology practices adding hair removal services.',
+			ka: 'კლინიკური დონის პლატფორმები დერმატოლოგიური პრაქტიკებისთვის, რომლებიც ეპილაციის სერვისს მატებენ.'
 		}
 	},
 	{
@@ -122,48 +63,10 @@ export const industries: { name: LocalizedString; description: LocalizedString }
 		}
 	},
 	{
-		name: { en: 'Medical Centers', ka: 'სამედიცინო ცენტრები' },
-		description: {
-			en: 'Diagnostic and treatment devices for general and specialist care.',
-			ka: 'დიაგნოსტიკური და სამკურნალო აპარატები ზოგადი და სპეციალიზებული მოვლისთვის.'
-		}
-	},
-	{
 		name: { en: 'Spa Clinics', ka: 'სპა კლინიკები' },
 		description: {
-			en: 'Non-invasive systems suited to premium wellness environments.',
-			ka: 'არაინვაზიური სისტემები, მორგებული პრემიუმ საველნეს გარემოსთვის.'
-		}
-	}
-];
-
-export const brands: { name: string; description: LocalizedString }[] = [
-	{
-		name: 'Nixora Select',
-		description: {
-			en: 'Our house line of aesthetic platforms, engineered for consistency across multi-site clinics.',
-			ka: 'ჩვენი საკუთარი ესთეტიკური პლატფორმების ხაზი, შექმნილი მრავალფილიალიან კლინიკებში თანმიმდევრულობისთვის.'
-		}
-	},
-	{
-		name: 'Aventis Medical',
-		description: {
-			en: 'European-engineered body contouring and skin tightening systems.',
-			ka: 'ევროპული წარმოების სხეულის კონტურირებისა და კანის გამკვრივების სისტემები.'
-		}
-	},
-	{
-		name: 'Praxis Dental',
-		description: {
-			en: 'Diagnostic imaging and precision instrumentation for dental practices.',
-			ka: 'დიაგნოსტიკური ვიზუალიზაცია და ზუსტი ინსტრუმენტები სტომატოლოგიური პრაქტიკისთვის.'
-		}
-	},
-	{
-		name: 'Corelux Systems',
-		description: {
-			en: 'Light-based and laser platforms for advanced skin treatment protocols.',
-			ka: 'სინათლეზე დაფუძნებული და ლაზერული პლატფორმები კანის მოვლის მოწინავე პროცედურებისთვის.'
+			en: 'Quiet, low-maintenance platforms suited to premium wellness environments.',
+			ka: 'ჩუმი, დაბალმოვლადი პლატფორმები, მორგებული პრემიუმ საველნეს გარემოსთვის.'
 		}
 	}
 ];

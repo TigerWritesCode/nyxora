@@ -1,4 +1,4 @@
-# NIXORA GEORGIA — Website
+# NYXORA GEORGIA — Website
 
 A B2B corporate website for a Georgian distributor of professional aesthetic and medical equipment. Built with SvelteKit 5 (runes mode) and Tailwind CSS v4.
 

@@ -1,0 +1,21 @@
+{
+	"slug": "nyxora-elite",
+	"name": "NYXORA ELITE",
+	"featured": false,
+	"tagline_en": "Entry diode platform for growing practices",
+	"tagline_ka": "საწყისი დიოდური პლატფორმა მზარდი პრაქტიკისთვის",
+	"description_en": "A dependable single-wavelength diode platform built for clinics starting or expanding a laser hair removal menu.",
+	"description_ka": "საიმედო ერთტალღოვანი დიოდური პლატფორმა კლინიკებისთვის, რომლებიც იწყებენ ან აფართოებენ ლაზერული ეპილაციის მომსახურებას.",
+	"highlights_en": [
+		"808nm high-power diode laser",
+		"Sapphire contact cooling",
+		"Compact single-handpiece design",
+		"8\" touchscreen control panel"
+	],
+	"highlights_ka": [
+		"808 ნმ მაღალი სიმძლავრის დიოდური ლაზერი",
+		"საფირონის კონტაქტური გაგრილება",
+		"კომპაქტური ერთხელსაწყოიანი დიზაინი",
+		"8 დიუმიანი სენსორული მართვის პანელი"
+	]
+}

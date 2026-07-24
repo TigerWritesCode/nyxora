@@ -1,0 +1,17 @@
+// Design tokens — kept as CSS custom properties (not Sass variables) so every
+// component can read them with plain var(--color-x), no @use needed for colors.
+:root {
+	--color-paper: #ffffff;
+	--color-mist: #f7f7f7;
+	--color-ink: #111111;
+	--color-obsidian: #1a1a1a;
+	--color-gold: #c9a227;
+	--color-gold-soft: #e3c567;
+	--color-line: #eaeaea;
+
+	--font-display: 'Manrope', 'BPG Phone Sans', ui-sans-serif, system-ui, sans-serif;
+	--font-body: 'Inter', 'BPG Phone Sans', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'IBM Plex Mono', 'BPG Phone Sans', ui-monospace, monospace;
+
+	--container-content: 1280px;
+}

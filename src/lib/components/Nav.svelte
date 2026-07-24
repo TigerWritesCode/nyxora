@@ -20,104 +20,117 @@
 	}
 </script>
 
-<header class="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
-	<div class="mx-auto flex max-w-content items-center justify-between px-6 py-4 lg:px-10">
-		<a href="/" class="shrink-0 font-display text-lg font-extrabold tracking-tight text-ink">
-			NIXORA <span class="text-gold">GEORGIA</span>
-		</a>
+<header class="nav">
+	<div class="nav__bar">
+		<div class="nav__bar-inner">
+			<a href="mailto:info@nyxoralasers.com" class="nav__email"> info@nyxoralasers.com </a>
 
-		<nav class="hidden items-center justify-center gap-6 lg:flex lg:flex-1 xl:gap-8">
-			{#each links as link (link.href)}
-				<a
-					href={link.href}
-					class="relative whitespace-nowrap py-1 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
-					class:text-ink={isActive(link.href)}
+			<div class="nav__shipping">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					class="nav__shipping-icon"
 				>
-					{link.label}
-					{#if isActive(link.href)}
-						<span class="absolute -bottom-1 left-0 h-px w-full bg-gold"></span>
-					{/if}
-				</a>
-			{/each}
-		</nav>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3 16.5V6.75A1.75 1.75 0 0 1 4.75 5h8.5A1.75 1.75 0 0 1 15 6.75v9.75M3 16.5h12M3 16.5a1.5 1.5 0 1 0 3 0m9-3h3.379a1 1 0 0 1 .78.375l2.121 2.652a1 1 0 0 1 .22.625V16.5m-6.5 0a1.5 1.5 0 1 0 3 0m-3 0h3m0 0a1.5 1.5 0 1 0 3 0"
+					/>
+				</svg>
+				<span class="nav__shipping-text">{T.nav.shipping}</span>
+			</div>
 
-		<div class="hidden shrink-0 items-center gap-4 lg:flex">
-			<div class="flex items-center gap-1 border border-line text-xs font-semibold">
+			<div class="nav__lang">
 				<button
-					class="px-2.5 py-1.5 transition-colors"
-					class:bg-obsidian={localeState.current === 'en'}
-					class:text-paper={localeState.current === 'en'}
-					class:text-ink={localeState.current !== 'en'}
+					class="nav__lang-btn"
+					class:is-active={localeState.current === 'en'}
 					onclick={() => setLocale('en')}
 					aria-pressed={localeState.current === 'en'}
 				>
 					EN
 				</button>
 				<button
-					class="px-2.5 py-1.5 transition-colors"
-					class:bg-obsidian={localeState.current === 'ka'}
-					class:text-paper={localeState.current === 'ka'}
-					class:text-ink={localeState.current !== 'ka'}
+					class="nav__lang-btn"
+					class:is-active={localeState.current === 'ka'}
 					onclick={() => setLocale('ka')}
 					aria-pressed={localeState.current === 'ka'}
 				>
 					ქარ
 				</button>
 			</div>
+		</div>
+	</div>
 
-			<a
-				href="/contact"
-				class="inline-block rounded-none bg-obsidian px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-gold hover:text-obsidian"
-			>
+	<div class="nav__row">
+		<a href="/" class="nav__logo"> NYXORA <span class="nav__logo-accent">GEORGIA</span> </a>
+
+		<nav class="nav__links">
+			{#each links as link (link.href)}
+				<a href={link.href} class="nav__link" class:nav__link--active={isActive(link.href)}>
+					{link.label}
+					{#if isActive(link.href)}
+						<span class="nav__link-underline"></span>
+					{/if}
+				</a>
+			{/each}
+		</nav>
+
+		<div class="nav__contact-wrap">
+			<a href="/contact" class="nav__contact-btn">
 				{T.nav.contactSales}
 			</a>
 		</div>
 
-		<button
-			class="flex flex-col gap-1.5 lg:hidden"
-			aria-label="Toggle menu"
-			aria-expanded={open}
-			onclick={() => (open = !open)}
-		>
-			<span class="block h-px w-6 bg-ink transition-transform" class:rotate-45={open} class:translate-y-2={open}
-			></span>
-			<span class="block h-px w-6 bg-ink transition-opacity" class:opacity-0={open}></span>
-			<span
-				class="block h-px w-6 bg-ink transition-transform"
-				class:-rotate-45={open}
-				class:-translate-y-2={open}
-			></span>
+		<button class="nav__toggle" aria-label="Toggle menu" aria-expanded={open} onclick={() => (open = !open)}>
+			{#if open}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					class="nav__toggle-icon"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			{:else}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					class="nav__toggle-icon"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+				</svg>
+			{/if}
 		</button>
 	</div>
 
 	{#if open}
-		<nav class="flex flex-col gap-1 border-t border-line px-6 py-4 lg:hidden">
+		<nav class="nav__mobile">
 			{#each links as link (link.href)}
-				<a
-					href={link.href}
-					class="py-2.5 text-sm font-medium text-ink/80"
-					onclick={() => (open = false)}
-				>
+				<a href={link.href} class="nav__mobile-link" onclick={() => (open = false)}>
 					{link.label}
 				</a>
 			{/each}
 
-			<div class="mt-2 flex items-center gap-1 border border-line text-xs font-semibold">
+			<div class="nav__mobile-lang">
 				<button
-					class="flex-1 px-2.5 py-2 transition-colors"
-					class:bg-obsidian={localeState.current === 'en'}
-					class:text-paper={localeState.current === 'en'}
-					class:text-ink={localeState.current !== 'en'}
+					class="nav__mobile-lang-btn"
+					class:is-active={localeState.current === 'en'}
 					onclick={() => setLocale('en')}
 					aria-pressed={localeState.current === 'en'}
 				>
 					EN
 				</button>
 				<button
-					class="flex-1 px-2.5 py-2 transition-colors"
-					class:bg-obsidian={localeState.current === 'ka'}
-					class:text-paper={localeState.current === 'ka'}
-					class:text-ink={localeState.current !== 'ka'}
+					class="nav__mobile-lang-btn"
+					class:is-active={localeState.current === 'ka'}
 					onclick={() => setLocale('ka')}
 					aria-pressed={localeState.current === 'ka'}
 				>
@@ -125,13 +138,259 @@
 				</button>
 			</div>
 
-			<a
-				href="/contact"
-				class="mt-3 bg-obsidian px-5 py-3 text-center text-sm font-medium text-paper"
-				onclick={() => (open = false)}
-			>
+			<a href="/contact" class="nav__mobile-contact" onclick={() => (open = false)}>
 				{T.nav.contactSales}
 			</a>
 		</nav>
 	{/if}
 </header>
+
+<style lang="scss">
+	@use '$lib/styles/breakpoints' as *;
+
+	.nav {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		border-bottom: 1px solid var(--color-line);
+		background-color: color-mix(in srgb, var(--color-paper) 90%, transparent);
+		backdrop-filter: blur(8px);
+	}
+
+	.nav__bar {
+		background-color: var(--color-gold);
+	}
+
+	.nav__bar-inner {
+		margin-inline: auto;
+		max-width: var(--container-content);
+		display: grid;
+		grid-template-columns: 1fr;
+		align-items: center;
+		padding: 0.5rem 1.5rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: var(--color-obsidian);
+
+		@include lg {
+			grid-template-columns: repeat(3, 1fr);
+			padding-inline: 2.5rem;
+		}
+	}
+
+	.nav__email {
+		display: none;
+		justify-self: start;
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		@include lg {
+			display: block;
+		}
+	}
+
+	.nav__shipping {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+
+		@include lg {
+			justify-self: center;
+		}
+	}
+
+	.nav__shipping-icon {
+		height: 1rem;
+		width: 1rem;
+	}
+
+	.nav__shipping-text {
+		text-transform: uppercase;
+	}
+
+	.nav__lang {
+		display: none;
+		align-items: center;
+		justify-self: end;
+		gap: 0.25rem;
+		border: 1px solid color-mix(in srgb, var(--color-obsidian) 30%, transparent);
+
+		@include lg {
+			display: flex;
+		}
+	}
+
+	.nav__lang-btn {
+		padding: 0.25rem 0.625rem;
+		transition: background-color 150ms ease, color 150ms ease;
+
+		&.is-active {
+			background-color: var(--color-obsidian);
+			color: var(--color-paper);
+		}
+	}
+
+	.nav__row {
+		margin-inline: auto;
+		max-width: var(--container-content);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1rem 1.5rem;
+
+		@include lg {
+			padding-inline: 2.5rem;
+		}
+	}
+
+	.nav__logo {
+		flex-shrink: 0;
+		font-family: var(--font-display);
+		font-size: 1.125rem;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: var(--color-ink);
+	}
+
+	.nav__logo-accent {
+		color: var(--color-gold);
+	}
+
+	.nav__links {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+
+		@include lg {
+			display: flex;
+			flex: 1;
+		}
+
+		@include xl {
+			gap: 2rem;
+		}
+	}
+
+	.nav__link {
+		position: relative;
+		white-space: nowrap;
+		padding-block: 0.25rem;
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: color-mix(in srgb, var(--color-ink) 80%, transparent);
+		transition: color 150ms ease;
+
+		&:hover {
+			color: var(--color-ink);
+		}
+
+		&--active {
+			color: var(--color-ink);
+		}
+	}
+
+	.nav__link-underline {
+		position: absolute;
+		bottom: -0.25rem;
+		left: 0;
+		height: 1px;
+		width: 100%;
+		background-color: var(--color-gold);
+	}
+
+	.nav__contact-wrap {
+		display: none;
+		flex-shrink: 0;
+		align-items: center;
+
+		@include lg {
+			display: flex;
+		}
+	}
+
+	.nav__contact-btn {
+		display: inline-block;
+		background-color: var(--color-obsidian);
+		padding: 0.625rem 1.25rem;
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--color-paper);
+		transition: background-color 150ms ease, color 150ms ease;
+
+		&:hover {
+			background-color: var(--color-gold);
+			color: var(--color-obsidian);
+		}
+	}
+
+	.nav__toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include lg {
+			display: none;
+		}
+	}
+
+	.nav__toggle-icon {
+		height: 1.5rem;
+		width: 1.5rem;
+		color: var(--color-ink);
+	}
+
+	.nav__mobile {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		border-top: 1px solid var(--color-line);
+		padding: 1rem 1.5rem;
+
+		@include lg {
+			display: none;
+		}
+	}
+
+	.nav__mobile-link {
+		padding-block: 0.625rem;
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: color-mix(in srgb, var(--color-ink) 80%, transparent);
+	}
+
+	.nav__mobile-lang {
+		margin-top: 0.5rem;
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		border: 1px solid var(--color-line);
+		font-size: 0.75rem;
+		font-weight: 600;
+	}
+
+	.nav__mobile-lang-btn {
+		flex: 1;
+		padding: 0.5rem 0.625rem;
+		color: var(--color-ink);
+		transition: background-color 150ms ease, color 150ms ease;
+
+		&.is-active {
+			background-color: var(--color-obsidian);
+			color: var(--color-paper);
+		}
+	}
+
+	.nav__mobile-contact {
+		margin-top: 0.75rem;
+		background-color: var(--color-obsidian);
+		padding: 0.75rem 1.25rem;
+		text-align: center;
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--color-paper);
+	}
+</style>

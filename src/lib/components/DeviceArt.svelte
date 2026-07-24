@@ -2,7 +2,13 @@
 	let { variant = 'light' }: { variant?: 'light' | 'dark' } = $props();
 </script>
 
-<svg viewBox="0 0 560 560" class="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aesthetic device illustration">
+<svg
+	viewBox="0 0 560 560"
+	class="device-art"
+	xmlns="http://www.w3.org/2000/svg"
+	role="img"
+	aria-label="Aesthetic device illustration"
+>
 	<defs>
 		<radialGradient id="glow" cx="50%" cy="38%" r="60%">
 			<stop offset="0%" stop-color="#C9A227" stop-opacity="0.35" />
@@ -49,3 +55,10 @@
 	<!-- base -->
 	<rect x="205" y="452" width="150" height="10" rx="3" fill="#1A1A1A" opacity="0.7" />
 </svg>
+
+<style lang="scss">
+	.device-art {
+		height: 100%;
+		width: 100%;
+	}
+</style>

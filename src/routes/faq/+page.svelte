@@ -16,34 +16,25 @@
 	<title>{T.faq.title}</title>
 </svelte:head>
 
-<section class="border-b border-line">
-	<div class="mx-auto max-w-content px-6 py-20 lg:px-10 lg:py-24">
+<section class="hero">
+	<div class="hero__inner">
 		<p class="eyebrow">{T.faq.eyebrow}</p>
-		<h1 class="mt-5 max-w-2xl text-4xl font-bold leading-tight tracking-tight text-ink lg:text-5xl">
+		<h1 class="hero__title">
 			{T.faq.h1}
 		</h1>
 	</div>
 </section>
 
-<section class="mx-auto max-w-content px-6 py-20 lg:px-10">
-	<div class="mx-auto max-w-2xl divide-y divide-line border-y border-line">
+<section class="faq">
+	<div class="faq__list">
 		{#each T.faq.items as item, i (item.q)}
-			<div>
-				<button
-					class="flex w-full items-center justify-between gap-6 py-6 text-left"
-					onclick={() => toggle(i)}
-					aria-expanded={openIndex === i}
-				>
-					<span class="font-medium text-ink">{item.q}</span>
-					<span
-						class="shrink-0 text-xl font-light text-gold transition-transform duration-300"
-						class:rotate-45={openIndex === i}
-					>
-						+
-					</span>
+			<div class="faq__item">
+				<button class="faq__question" onclick={() => toggle(i)} aria-expanded={openIndex === i}>
+					<span class="faq__question-text">{item.q}</span>
+					<span class="faq__icon" class:is-open={openIndex === i}> + </span>
 				</button>
 				{#if openIndex === i}
-					<p class="pb-6 pr-10 text-sm leading-relaxed text-ink/60">{item.a}</p>
+					<p class="faq__answer">{item.a}</p>
 				{/if}
 			</div>
 		{/each}
@@ -51,3 +42,86 @@
 </section>
 
 <ContactCTA />
+
+<style lang="scss">
+	@use '$lib/styles/breakpoints' as *;
+
+	.hero {
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.hero__inner {
+		@include container;
+		padding-top: 1.5rem;
+		padding-bottom: 5rem;
+
+		@include lg {
+			padding-top: 2rem;
+			padding-bottom: 6rem;
+		}
+	}
+
+	.hero__title {
+		margin-top: 1.25rem;
+		max-width: 42rem;
+		font-size: 2.25rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		color: var(--color-ink);
+
+		@include lg {
+			font-size: 3rem;
+		}
+	}
+
+	.faq {
+		@include container;
+		padding-block: 5rem;
+	}
+
+	.faq__list {
+		margin-inline: auto;
+		max-width: 42rem;
+		border-block: 1px solid var(--color-line);
+	}
+
+	.faq__item:not(:first-child) {
+		border-top: 1px solid var(--color-line);
+	}
+
+	.faq__question {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		padding-block: 1.5rem;
+		text-align: left;
+	}
+
+	.faq__question-text {
+		font-weight: 500;
+		color: var(--color-ink);
+	}
+
+	.faq__icon {
+		flex-shrink: 0;
+		font-size: 1.25rem;
+		font-weight: 300;
+		color: var(--color-gold);
+		transition: transform 300ms ease;
+
+		&.is-open {
+			transform: rotate(45deg);
+		}
+	}
+
+	.faq__answer {
+		padding-bottom: 1.5rem;
+		padding-right: 2.5rem;
+		font-size: 0.875rem;
+		line-height: 1.6;
+		color: color-mix(in srgb, var(--color-ink) 60%, transparent);
+	}
+</style>

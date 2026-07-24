@@ -1,0 +1,24 @@
+{
+	"slug": "nyxora-elite-pro-x",
+	"name": "NYXORA ELITE PRO X",
+	"featured": true,
+	"image": "/images/eliteprox.png",
+	"tagline_en": "Flagship quad-wavelength platform for multi-chair clinics",
+	"tagline_ka": "ფლაგმანი ოთხტალღოვანი პლატფორმა მრავალსკამიანი კლინიკებისთვის",
+	"description_en": "Our flagship quad-wavelength diode platform, engineered for multi-chair clinics that need maximum throughput without compromising comfort.",
+	"description_ka": "ჩვენი ფლაგმანი ოთხტალღოვანი დიოდური პლატფორმა, შექმნილი მრავალსკამიანი კლინიკებისთვის, რომლებსაც სჭირდებათ მაქსიმალური გამტარუნარიანობა კომფორტის დათმობის გარეშე.",
+	"highlights_en": [
+		"Four wavelengths — 755 / 808 / 940 / 1064 nm",
+		"1200W peak diode power",
+		"Dual-handpiece capability",
+		"Continuous contact cooling to 4°C",
+		"12.1\" medical-grade touchscreen"
+	],
+	"highlights_ka": [
+		"ოთხი ტალღის სიგრძე — 755 / 808 / 940 / 1064 ნმ",
+		"1200 W მაქსიმალური დიოდური სიმძლავრე",
+		"ორმაგი ხელსაწყოს შესაძლებლობა",
+		"უწყვეტი კონტაქტური გაგრილება 4°C-მდე",
+		"12.1 დიუმიანი სამედიცინო კლასის სენსორული ეკრანი"
+	]
+}

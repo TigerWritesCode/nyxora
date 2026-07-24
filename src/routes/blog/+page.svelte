@@ -17,29 +17,29 @@
 	<title>{T.blog.title}</title>
 </svelte:head>
 
-<section class="border-b border-line">
-	<div class="mx-auto max-w-content px-6 py-20 lg:px-10 lg:py-24">
+<section class="hero">
+	<div class="hero__inner">
 		<p class="eyebrow">{T.blog.eyebrow}</p>
-		<h1 class="mt-5 max-w-2xl text-4xl font-bold leading-tight tracking-tight text-ink lg:text-5xl">
+		<h1 class="hero__title">
 			{T.blog.h1}
 		</h1>
-		<p class="mt-6 max-w-xl text-ink/60">
+		<p class="hero__subtitle">
 			{T.blog.subtitle}
 		</p>
 	</div>
 </section>
 
-<section class="mx-auto max-w-content px-6 py-20 lg:px-10">
-	<div class="grid gap-6 sm:grid-cols-2">
+<section class="blog">
+	<div class="blog__list">
 		{#each blogPosts as post (post.title.en)}
-			<article class="reticle group border border-line bg-paper p-8 transition-colors hover:border-gold">
-				<div class="flex items-center justify-between text-xs">
+			<article class="reticle blog__card">
+				<div class="blog__meta">
 					<span class="eyebrow">{post.tag[locale]}</span>
-					<span class="text-ink/40">{formatDate(post.date)}</span>
+					<span class="blog__date">{formatDate(post.date)}</span>
 				</div>
-				<h2 class="mt-4 text-xl font-semibold leading-snug text-ink">{post.title[locale]}</h2>
-				<p class="mt-3 text-sm leading-relaxed text-ink/55">{post.excerpt[locale]}</p>
-				<span class="mt-6 inline-block text-sm font-semibold text-ink underline decoration-gold underline-offset-4">
+				<h2 class="blog__title">{post.title[locale]}</h2>
+				<p class="blog__excerpt">{post.excerpt[locale]}</p>
+				<span class="blog__read">
 					{T.blog.readArticle}
 				</span>
 			</article>
@@ -48,3 +48,104 @@
 </section>
 
 <ContactCTA />
+
+<style lang="scss">
+	@use '$lib/styles/breakpoints' as *;
+
+	.hero {
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.hero__inner {
+		@include container;
+		padding-top: 1.5rem;
+		padding-bottom: 5rem;
+
+		@include lg {
+			padding-top: 2rem;
+			padding-bottom: 6rem;
+		}
+	}
+
+	.hero__title {
+		margin-top: 1.25rem;
+		max-width: 42rem;
+		font-size: 2.25rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		color: var(--color-ink);
+
+		@include lg {
+			font-size: 3rem;
+		}
+	}
+
+	.hero__subtitle {
+		margin-top: 1.5rem;
+		max-width: 36rem;
+		color: color-mix(in srgb, var(--color-ink) 60%, transparent);
+	}
+
+	.blog {
+		@include container;
+		padding-block: 5rem;
+	}
+
+	.blog__list {
+		display: grid;
+		gap: 1.5rem;
+
+		@include sm {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.blog__card {
+		border: 1px solid var(--color-line);
+		background-color: var(--color-paper);
+		padding: 2rem;
+		transition: border-color 150ms ease;
+
+		&:hover {
+			border-color: var(--color-gold);
+		}
+	}
+
+	.blog__meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 0.75rem;
+	}
+
+	.blog__date {
+		color: color-mix(in srgb, var(--color-ink) 40%, transparent);
+	}
+
+	.blog__title {
+		margin-top: 1rem;
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1.3;
+		color: var(--color-ink);
+	}
+
+	.blog__excerpt {
+		margin-top: 0.75rem;
+		font-size: 0.875rem;
+		line-height: 1.6;
+		color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+	}
+
+	.blog__read {
+		margin-top: 1.5rem;
+		display: inline-block;
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--color-ink);
+		text-decoration: underline;
+		text-decoration-color: var(--color-gold);
+		text-underline-offset: 4px;
+	}
+</style>

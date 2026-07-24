@@ -23,7 +23,7 @@ collections:
     identifier_field: name
     fields:
       - {
-          label: "Slug (URL, ლათინურად, მაგ. quadra-diode-4w)",
+          label: "Slug (URL, ლათინურად, მაგ. nyxora-elite-pro)",
           name: "slug",
           widget: "string",
         }
@@ -34,17 +34,16 @@ collections:
           widget: "image",
           required: false,
         }
-      - label: "კატეგორია"
-        name: "categorySlug"
-        widget: "select"
-        options:
-          - { label: "ლაზერული თმის მოცილება", value: "laser-hair-removal" }
-          - { label: "კანის განახლება", value: "skin-rejuvenation" }
-          - { label: "სხეულის კონტურირება", value: "body-contouring" }
-          - { label: "სტომატოლოგიური აღჭურვილობა", value: "dental-equipment" }
-          - { label: "სამედიცინო აპარატურა", value: "medical-devices" }
-          - { label: "აქსესუარები", value: "accessories" }
-      - { label: "ბრენდი", name: "brand", widget: "string" }
+      - {
+          label: "სლოგანი (მოკლე, ინგლისურად)",
+          name: "tagline_en",
+          widget: "string",
+        }
+      - {
+          label: "სლოგანი (მოკლე, ქართულად)",
+          name: "tagline_ka",
+          widget: "string",
+        }
       - {
           label: "გამორჩეული პროდუქტი (მთავარ გვერდზე გამოსაჩენად)",
           name: "featured",

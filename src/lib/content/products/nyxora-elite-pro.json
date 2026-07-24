@@ -1,0 +1,21 @@
+{
+	"slug": "nyxora-elite-pro",
+	"name": "NYXORA ELITE PRO",
+	"featured": false,
+	"tagline_en": "Multi-wavelength platform for high-volume clinics",
+	"tagline_ka": "მრავალტალღოვანი პლატფორმა მაღალი დატვირთვის კლინიკებისთვის",
+	"description_en": "A tri-wavelength diode platform that adds treatment depth and speed for clinics running back-to-back sessions.",
+	"description_ka": "სამტალღოვანი დიოდური პლატფორმა, რომელიც მატებს სამკურნალო სიღრმესა და სისწრაფეს განუწყვეტელი სეანსების მქონე კლინიკებისთვის.",
+	"highlights_en": [
+		"Tri-wavelength — 755 / 808 / 940 nm",
+		"Larger 15×15mm spot size",
+		"High-speed repetition mode",
+		"10.4\" medical-grade touchscreen"
+	],
+	"highlights_ka": [
+		"სამი ტალღის სიგრძე — 755 / 808 / 940 ნმ",
+		"გადიდებული 15×15მმ ლაქის ზომა",
+		"მაღალსიჩქარული გამეორების რეჟიმი",
+		"10.4 დიუმიანი სამედიცინო კლასის სენსორული ეკრანი"
+	]
+}

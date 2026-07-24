@@ -1,0 +1,35 @@
+// Breakpoints actually in use across the site (matches the old Tailwind scale).
+@mixin sm {
+	@media (min-width: 640px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (min-width: 1280px) {
+		@content;
+	}
+}
+
+// The "mx-auto max-w-content px-6 lg:px-10" wrapper repeated on every page.
+@mixin container {
+	margin-inline: auto;
+	max-width: var(--container-content);
+	padding-inline: 1.5rem;
+
+	@include lg {
+		padding-inline: 2.5rem;
+	}
+}
